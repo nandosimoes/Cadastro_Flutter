@@ -31,7 +31,9 @@ class CadastroScreenState extends State<CadastroScreen> {
     }
 
     setState(() {
+
       usuarios.add(UserModel(
+      
         nome: nomeController.text,
         email: emailController.text,
         telefone: telefoneController.text,

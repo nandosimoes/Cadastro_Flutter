@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/user_model.dart';
+
 class UserCard extends StatelessWidget {
   final UserModel user;
 
@@ -7,6 +8,14 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String imageUrl;
+    
+    if (user.genero == 'Masculino') {
+      imageUrl = 'https://cdn-icons-png.flaticon.com/512/456/456212.png';
+    } else {
+      imageUrl = 'https://cdn-icons-png.flaticon.com/512/53/53176.png'; 
+    }
+
     return Card(
       margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 36.0),
       child: Padding(
@@ -17,15 +26,14 @@ class UserCard extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Image.network(
-                  'https://cdn-icons-png.flaticon.com/512/456/456212.png',
-                  
-                  width: 50, 
+                  imageUrl,
+                  width: 50,
                   height: 50,
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            SizedBox(width: 16), 
+            SizedBox(width: 16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
